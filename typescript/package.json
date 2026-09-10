@@ -1,0 +1,24 @@
+{
+  "name": "purechain-demo-typescript",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Walkthrough of the purechain-sdk TypeScript client",
+  "type": "module",
+  "scripts": {
+    "01": "node src/01-connect.ts",
+    "02": "node src/02-wallet.ts",
+    "03": "node src/03-read.ts",
+    "04": "node src/04-send.ts",
+    "05": "node src/05-contract.ts",
+    "06": "node src/06-events.ts",
+    "07": "node src/07-metrics.ts",
+    "all": "node src/run-all.ts"
+  },
+  "dependencies": {
+    "purechain-sdk": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "typescript": "^5.7.0"
+  }
+}

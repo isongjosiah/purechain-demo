@@ -1,0 +1,83 @@
+{
+  "contractName": "Counter",
+  "compiler": "solc 0.8.28+commit.7893614a.Emscripten.clang",
+  "evmVersion": "shanghai",
+  "abi": [
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "startAt",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "constructor"
+    },
+    {
+      "anonymous": false,
+      "inputs": [
+        {
+          "indexed": true,
+          "internalType": "address",
+          "name": "by",
+          "type": "address"
+        },
+        {
+          "indexed": false,
+          "internalType": "uint256",
+          "name": "newValue",
+          "type": "uint256"
+        }
+      ],
+      "name": "Incremented",
+      "type": "event"
+    },
+    {
+      "inputs": [],
+      "name": "count",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
+      "inputs": [
+        {
+          "internalType": "uint256",
+          "name": "by",
+          "type": "uint256"
+        }
+      ],
+      "name": "increment",
+      "outputs": [
+        {
+          "internalType": "uint256",
+          "name": "",
+          "type": "uint256"
+        }
+      ],
+      "stateMutability": "nonpayable",
+      "type": "function"
+    },
+    {
+      "inputs": [],
+      "name": "owner",
+      "outputs": [
+        {
+          "internalType": "address",
+          "name": "",
+          "type": "address"
+        }
+      ],
+      "stateMutability": "view",
+      "type": "function"
+    }
+  ],
+  "bytecode": "0x60a0604052348015600e575f5ffd5b50604051610226380380610226833981016040819052602b916035565b5f5533608052604b565b5f602082840312156044575f5ffd5b5051919050565b6080516101c46100625f395f607101526101c45ff3fe608060405234801561000f575f5ffd5b506004361061003f575f3560e01c806306661abd146100435780637cf5dab0146100595780638da5cb5b1461006c575b5f5ffd5b5f545b6040519081526020015b60405180910390f35b610046610067366004610152565b6100ab565b6100937f000000000000000000000000000000000000000000000000000000000000000081565b6040516001600160a01b039091168152602001610050565b5f5f82116100ff5760405162461bcd60e51b815260206004820152601a60248201527f696e6372656d656e74206d75737420626520706f736974697665000000000000604482015260640160405180910390fd5b815f5f82825461010f9190610169565b90915550505f5460405190815233907f38ac789ed44572701765277c4d0970f2db1c1a571ed39e84358095ae4eaa54209060200160405180910390a250505f5490565b5f60208284031215610162575f5ffd5b5035919050565b8082018082111561018857634e487b7160e01b5f52601160045260245ffd5b9291505056fea264697066735822122072973a8ca0981d1de34b3ae1c0fdc43905eab6cd0e8132dce28f8796b66e9f0b64736f6c634300081c0033"
+}

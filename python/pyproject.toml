@@ -1,0 +1,9 @@
+[project]
+name = "purechain-demo-python"
+version = "0.0.0"
+description = "Walkthrough of the purechain-sdk Python client"
+requires-python = ">=3.11"
+dependencies = ["purechain-sdk>=0.0.1"]
+
+[tool.ruff]
+line-length = 100
