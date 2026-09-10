@@ -15,7 +15,7 @@
     "all": "node src/run-all.ts"
   },
   "dependencies": {
-    "purechain-sdk": "^0.0.1"
+    "purechain-sdk": "^0.0.2"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

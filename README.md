@@ -13,7 +13,17 @@ typescript/    npm i purechain-sdk
 python/        pip install purechain-sdk   (imports as `purechain`)
 ```
 
-## Running it
+## Running it in Codespaces
+
+Open the repo in a Codespace and everything installs itself — both toolchains,
+both halves, from the public registries.
+
+**No secrets or tokens are needed, including for the steps that write.** Gas is
+free on PureChain and the demo generates throwaway keys, so a Codespace can
+exercise the full path — deploy a contract, send transactions, watch events —
+with nothing configured.
+
+## Running it locally
 
 **TypeScript** — needs Node 20+; source runs directly, no build step.
 
@@ -97,19 +107,16 @@ One difference is deliberate: Python installs as `purechain-sdk` but imports as
 `purechain`, because a distribution name and an import name are separate things
 there.
 
-One is **not** deliberate, and building this demo is what surfaced it. Addresses
-decoded from contract return values differ in case between the two libraries:
+Building this demo surfaced a real parity bug, since fixed. In 0.0.1, addresses
+decoded from contract return values came back checksummed in TypeScript and
+lowercase in Python — same bytes in, different strings out, because ethers
+checksums decoded addresses and eth_abi does not. As of **0.0.2** both return
+the library's canonical lowercase form, and both suites pin it so they cannot
+drift apart again.
 
-```
-abi.decodeResult(…)   TypeScript  0xf39Fd6e51aad88F6F4ce6aB8827279cffFb92266
-abi.decode_result(…)  Python      0xf39fd6e51aad88f6f4ce6ab8827279cfffb92266
-```
-
-Same bytes in, different casing out — ethers checksums decoded addresses,
-eth_abi does not. The libraries' own convention is lowercase, so the TypeScript
-side is the odd one. It is harmless for comparison (`address.equals` is
-case-insensitive) but it means a value read from a contract cannot be compared
-with `===` across languages. Worth normalising in a future release.
+The demo therefore requires 0.0.2 or newer. Worth knowing if you pin versions:
+npm's `^0.0.1` matches *only* 0.0.1 — a caret on a `0.0.x` version does not
+allow the next patch.
 
 | | TypeScript | Python |
 |---|---|---|

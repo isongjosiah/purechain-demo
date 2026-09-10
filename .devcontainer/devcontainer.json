@@ -1,0 +1,25 @@
+{
+  "name": "purechain-sdk demo (TypeScript + Python)",
+
+  // The demo needs both toolchains, so it starts from a plain base and adds
+  // each as a feature rather than starting from a language-specific image.
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+
+  "features": {
+    // 22 tracks the latest 22.x. The demo runs .ts directly, which needs the
+    // type stripping unflagged in 22.18.
+    "ghcr.io/devcontainers/features/node:1": { "version": "22" },
+    "ghcr.io/devcontainers/features/python:1": { "version": "3.12" }
+  },
+
+  "postCreateCommand": "bash .devcontainer/setup.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": ["ms-python.python", "charliermarsh.ruff"],
+      "settings": {
+        "python.defaultInterpreterPath": "python/.venv/bin/python"
+      }
+    }
+  }
+}
